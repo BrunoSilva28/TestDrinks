@@ -1,0 +1,30 @@
+GET http://localhost:3003/drink
+Authorization: nome-sobrenome-turma
+
+###
+GET http://localhost:3003/drink/:id
+Authorization: nome-sobrenome-turma
+
+###
+POST http://localhost:3003/drink
+Content-Type: application/json
+Authorization: nome-sobrenome-turma
+
+{
+    "name": "Cerveja Guinness",
+    "description": "Cerveja tipo Draught, escura e sabor café, amargor leve",
+    "rating": 9.5
+}
+
+###
+PUT http://localhost:3003/drink/:id
+Content-Type: application/json
+Authorization: nome-sobrenome-turma
+
+{
+    "rating": 5
+}
+
+###
+DELETE http://localhost:3003/drink/:id
+Authorization: nome-sobrenome-turma
