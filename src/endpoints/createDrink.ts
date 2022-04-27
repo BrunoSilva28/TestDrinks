@@ -20,7 +20,22 @@ const createDrink = async (
 
         if (!name || !description || !rating) {
             errorCode = 422;
-            throw new Error("Insira um valor para 'name', 'description' e 'rating'");
+            throw new Error("Insira um valor para name, description e rating");
+        };
+
+        if (typeof name !== "string") {
+            errorCode = 422;
+            throw new Error("name deve ser uma string");
+        };
+
+        if (typeof description !== "string") {
+            errorCode = 422;
+            throw new Error("description deve ser uma string");
+        };
+
+        if (typeof rating !== "number") {
+            errorCode = 422;
+            throw new Error("rating deve ser um number");
         };
 
         const studentExist = await connection(studentTable).select("*").where({ author });

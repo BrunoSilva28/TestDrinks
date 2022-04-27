@@ -25,7 +25,7 @@ const updateDrinkRating = async (
 
         if(!rating) {
             errorCode = 422;
-            throw new Error("É necessário fornecer o novo 'rating' como um número");
+            throw new Error("É necessário fornecer o novo rating como um número");
         };
 
         if(rating < 0 || rating > 10) {
